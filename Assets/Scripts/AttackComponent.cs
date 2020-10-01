@@ -2,12 +2,11 @@
 
 public class AttackComponent : MonoBehaviour
 { 
-        [SerializeField] private Bullet bullet;
-
-
-        public void CreateBullet()
+        [SerializeField] private BulletBehaviour bullet;
+        
+        public void CreateBullet(Vector3 direction)
         {
-                var go = Instantiate(bullet, transform.up , Quaternion.identity);
-                go.GetComponent<Bullet>().Initialize(transform.up);
+                var go = Instantiate(bullet, transform.position + direction.normalized, Quaternion.identity);
+                go.GetComponent<BulletBehaviour>().Initialize(direction, gameObject);
         }
 }

@@ -13,15 +13,16 @@ public class InputComponent : MonoBehaviour
     {
         _movement = GetComponent<MovementComponent>();
         _attack = GetComponent<AttackComponent>();
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()
     {
         var x = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         Rotate(x);
-        _movement.AddForce(Input.GetAxis("Vertical") * transform.up);
+        _movement.ChooseDirection(Input.GetAxis("Vertical") * transform.up);
         if(Input.GetButtonDown("Fire1"))
-            _attack.CreateBullet();
+            _attack.CreateBullet(transform.up);
             
     }
 

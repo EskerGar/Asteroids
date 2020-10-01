@@ -4,24 +4,28 @@ using UnityEngine;
 [RequireComponent(typeof(MovementComponent))]
 public class BulletBehaviour : MonoBehaviour
 {
-        [SerializeField] private float distanceToDestroy;
+        [SerializeField] private float timeToDestroy;
         
         private Collider2D _ownerCollider;
-        private Vector3 _startPos;
+        private float _startBulletTime;
 
         public void Initialize(Vector2 direction, GameObject owner)
         {
                 var movement = GetComponent<MovementComponent>();
                 _ownerCollider = owner.GetComponent<Collider2D>();
                 movement.Initialize();
-                _startPos = transform.position;
+                _startBulletTime = Time.time;
                 movement.ChooseDirection(direction);
         }
         
         private void OnTriggerEnter2D(Collider2D other)
         {
                 var health = other.GetComponent<HealthComponent>();
+                if (_ownerCollider == null || _ownerCollider.GetComponent<UfoBehaviour>() != null &&
+                    other.GetComponent<ShipBehaviour>() == null) return;
+                
                 if (health == null || _ownerCollider == other) return;
+                
                 health.ChangeHealth(-1);
                 Destroy(gameObject);
         }
@@ -29,7 +33,7 @@ public class BulletBehaviour : MonoBehaviour
         
         private void Update()
         {
-                if((transform.position - _startPos).magnitude >= distanceToDestroy)
+                if((Time.time - _startBulletTime) >= timeToDestroy)
                         Destroy(gameObject);
         }
 }

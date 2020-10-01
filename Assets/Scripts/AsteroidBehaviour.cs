@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(MovementComponent), typeof(HealthComponent))]
@@ -45,11 +44,5 @@ public class AsteroidBehaviour : MonoBehaviour
     {
         _health.OnObjectDestroy -= SpawnSmallerAsteroid;
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.GetComponent<InputComponent>() == null) return;
-        other.GetComponent<HealthComponent>().ChangeHealth(-1);
-        Destroy(gameObject);
-    }
+    
 }

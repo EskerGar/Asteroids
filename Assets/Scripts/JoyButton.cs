@@ -5,26 +5,26 @@ using UnityEngine.UI;
 
 public class JoyButton : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 {
-   public bool Pressed { get; private set; }
+    public bool Pressed { get; private set; }
 
-   private Button _button;
+    private Button _button;
 
-   public void SubscribeButtonClick(Action func) => _button.onClick.AddListener(() => func());
+    public void SubscribeButtonClick(Action func) => _button.onClick.AddListener(() => func());
 
-   public void UnSubscribeAllButtonClick() => _button.onClick.RemoveAllListeners();
+    public void UnSubscribeAllButtonClick() => _button.onClick.RemoveAllListeners();
 
-   public void OnPointerDown(PointerEventData eventData)
-   {
-      Pressed = true;
-   }
+    public void OnPointerDown(PointerEventData eventData)
+    {
+       Pressed = true;
+    }
 
-   public void OnPointerUp(PointerEventData eventData)
-   {
-      Pressed = false;
-   }
+    public void OnPointerUp(PointerEventData eventData)
+    {
+       Pressed = false;
+    }
 
-   private void Awake()
-   {
-      _button = GetComponent<Button>();
-   }
+    private void Awake()
+    {
+       _button = GetComponent<Button>();
+    }
 }

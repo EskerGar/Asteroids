@@ -17,11 +17,16 @@ public class PlayerStats : MonoBehaviour
 
     public void SubscribeOnHealthChange(Action<int> func) => _playerHealthComponent.OnChangeHealth += func;
     public void UnSubscribeOnHealthChange(Action<int> func) => _playerHealthComponent.OnChangeHealth -= func;
-    
-    private void Start()
+
+
+    private void Awake()
     {
         _playerHealthComponent = playerShip.GetComponent<HealthComponent>();
         PlayerHealth = _playerHealthComponent.Health;
+    }
+
+    private void Start()
+    {
         _initTargetPoint = targetPointForNewHp;
         _playerHealthComponent.OnChangeHealth += ChangeHealth;
         _playerHealthComponent.OnObjectDestroy += EndGame;

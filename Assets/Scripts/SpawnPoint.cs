@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using static AsteroidsPool;
 
 public class SpawnPoint : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class SpawnPoint : MonoBehaviour
         else
         {
             SpawnEnemy();
-            AsteroidsPool.OnAllAsteroidDead += SpawnEnemy;
+            OnAllAsteroidDead += SpawnEnemy;
         }
     }
 
@@ -27,7 +28,7 @@ public class SpawnPoint : MonoBehaviour
     private void OnDestroy()
     {
         if(!isPeriodicSpawn)
-            AsteroidsPool.OnAllAsteroidDead -= SpawnEnemy;
+            OnAllAsteroidDead -= SpawnEnemy;
     }
     
     private IEnumerator SpawnCoroutine()

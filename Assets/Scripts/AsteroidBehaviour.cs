@@ -24,6 +24,7 @@ public class AsteroidBehaviour : MonoBehaviour
         _health = GetComponent<HealthComponent>();
         if(asteroidLevel > 0)
             _health.OnObjectDestroy += SpawnAsteroidsAfterDestroy;
+        _health.OnObjectDestroy += WhenAsteroidDestroy;
         _movement.ChooseDirection(Camera.main.transform.position - transform.position);
         CreateAsteroid(this);
     }
@@ -49,7 +50,7 @@ public class AsteroidBehaviour : MonoBehaviour
         return new Vector2(Random.Range(direction.y, -direction.y), Random.Range(-direction.x, direction.x));
     }
 
-    private void OnDestroy()
+    private void WhenAsteroidDestroy()
     {
         _health.OnObjectDestroy -= SpawnSmallerAsteroid;
         DeleteAsteroid(this);

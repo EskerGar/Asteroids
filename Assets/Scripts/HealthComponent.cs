@@ -9,8 +9,12 @@ public class HealthComponent : MonoBehaviour
     public event Action OnObjectDestroy;
     public int Health => health;
 
-    public void IncreaseHealthPoint() => health ++;
-    
+    public void IncreaseHealthPoint()
+    {
+        health++;
+        OnChangeHealth?.Invoke(health);
+    }
+
     public void ChangeHealth(int amount)
     {
         health += amount;

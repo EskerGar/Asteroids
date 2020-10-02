@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Components;
+using Player;
+using Ufo;
 using UnityEngine;
 
 [RequireComponent(typeof(MovementComponent))]

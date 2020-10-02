@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
-using static AsteroidsPool;
+using static Asteroids.AsteroidsPool;
 
 public class SpawnPoint : MonoBehaviour
 {

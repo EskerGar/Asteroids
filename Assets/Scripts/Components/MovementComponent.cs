@@ -2,9 +2,11 @@
 using UnityEngine;
 using static CameraProperties;
 
-[RequireComponent(typeof(Rigidbody2D))]
-public class MovementComponent : MonoBehaviour
-{ 
+namespace Components
+{
+    [RequireComponent(typeof(Rigidbody2D))]
+    public class MovementComponent : MonoBehaviour
+    { 
         [SerializeField] private float speed = 50f;
     
         public Vector2 Direction { get; private set; }
@@ -61,4 +63,5 @@ public class MovementComponent : MonoBehaviour
         {
             return check(positionCoord, cameraCoord);
         }
+    }
 }

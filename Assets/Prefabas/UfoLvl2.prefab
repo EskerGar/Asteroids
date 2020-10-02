@@ -20,6 +20,32 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 282818143891764680, guid: a40ec529a1e92494781b728e791f979a,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0014677644
+      objectReference: {fileID: 0}
+    - target: {fileID: 282818143891764680, guid: a40ec529a1e92494781b728e791f979a,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.9970645
+      objectReference: {fileID: 0}
+    - target: {fileID: 282818143891764680, guid: a40ec529a1e92494781b728e791f979a,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.05537866
+      objectReference: {fileID: 0}
+    - target: {fileID: 282818143891764680, guid: a40ec529a1e92494781b728e791f979a,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.7067008
+      objectReference: {fileID: 0}
+    - target: {fileID: 2994725009241598272, guid: a40ec529a1e92494781b728e791f979a,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9c44354628b6b5e4e98bbb85eb295f58,
+        type: 3}
     - target: {fileID: 3347250596106533133, guid: a40ec529a1e92494781b728e791f979a,
         type: 3}
       propertyPath: speed
@@ -88,12 +114,12 @@ PrefabInstance:
     - target: {fileID: 6933968063449726737, guid: a40ec529a1e92494781b728e791f979a,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.65
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6933968063449726737, guid: a40ec529a1e92494781b728e791f979a,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7501661335534144619, guid: a40ec529a1e92494781b728e791f979a,
         type: 3}

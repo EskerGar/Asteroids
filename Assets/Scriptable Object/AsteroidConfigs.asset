@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fc1907e2c3683b46b512330fc75f620, type: 3}
+  m_Name: AsteroidConfigs
+  m_EditorClassIdentifier: 
+  spritesList:
+  - {fileID: 21300000, guid: be87916c11afb954687fb6826651e153, type: 3}
+  - {fileID: 21300000, guid: 25ee4701abc35a844b78acfc1962ab8e, type: 3}
+  - {fileID: 21300000, guid: 943be84df7d1f8b479bd426364c1f47e, type: 3}
+  asteroidSpawnCount: 2
+  increasePointValue: 50

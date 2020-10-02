@@ -11,8 +11,10 @@ public class ShipBehaviour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        var health = other.GetComponent<HealthComponent>();
         if(other.Equals(gameObject.GetComponent<Collider2D>())) return;
-        other.GetComponent<HealthComponent>().ChangeHealth(-1);
+        if(health != null)
+            other.GetComponent<HealthComponent>().ChangeHealth(-1);
         _health.ChangeHealth(-1);
     }
 }

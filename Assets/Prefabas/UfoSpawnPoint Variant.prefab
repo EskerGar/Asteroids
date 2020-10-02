@@ -1,5 +1,20 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1540248539592645492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7728299814405128332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ae92b42e01d48409e653f5e08c53170, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5909273056967700818, guid: a40ec529a1e92494781b728e791f979a, type: 3}
+  spawnDelay: 20
+  isPeriodicSpawn: 1
 --- !u!1001 &6573824915182379356
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21,7 +36,7 @@ PrefabInstance:
     - target: {fileID: 3493251049930301904, guid: e4e01a69c917bf34ba0858d9ee346fd4,
         type: 3}
       propertyPath: m_Name
-      value: UfoSpawnPoint
+      value: UfoSpawnPoint Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3493251049930301905, guid: e4e01a69c917bf34ba0858d9ee346fd4,
         type: 3}
@@ -78,5 +93,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -8764466925790499786, guid: e4e01a69c917bf34ba0858d9ee346fd4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e4e01a69c917bf34ba0858d9ee346fd4, type: 3}
+--- !u!1 &7728299814405128332 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3493251049930301904, guid: e4e01a69c917bf34ba0858d9ee346fd4,
+    type: 3}
+  m_PrefabInstance: {fileID: 6573824915182379356}
+  m_PrefabAsset: {fileID: 0}

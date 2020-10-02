@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c166c82de66a93a44a68e69944ae3e9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
+  speed: 40
 --- !u!114 &9077142103834123420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,6 +147,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteroidPrefab: {fileID: 7688459659925884710}
+  pointsForDestroy: 50
+  asteroidSpawnCount: 2
+  increasePointValue: 50
+  asteroidLevel: 1
 --- !u!114 &7044357928553710191
 MonoBehaviour:
   m_ObjectHideFlags: 0

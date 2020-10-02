@@ -11,22 +11,22 @@ public class MovementComponent : MonoBehaviour
     
         private Rigidbody2D _rigidbody2D;
 
-    
-        private void Awake()
-        {
-            Initialize();
-        }
-    
+        public void IncreaseSpeed(float value) => speed += value;
+        
         public void Initialize()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
         }
-    
-    
+
         public void ChooseDirection(Vector2 direction)
         {
             Direction = direction;
             _rigidbody2D.AddForce(direction.normalized * speed);
+        }
+        
+        private void Awake()
+        {
+            Initialize();
         }
         
         private void OnBecameInvisible()

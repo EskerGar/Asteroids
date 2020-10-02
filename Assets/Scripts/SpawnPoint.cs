@@ -1,30 +1,42 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 public class SpawnPoint : MonoBehaviour
 {
     [SerializeField] private GameObject prefab;
     [SerializeField] private float spawnDelay;
+    [SerializeField] private bool isPeriodicSpawn;
 
     private void Start()
     {
-        StartCoroutine(StartSpawn(prefab, spawnDelay));
+        if (isPeriodicSpawn)
+            StartCoroutine(SpawnCoroutine());
+        else
+        {
+            SpawnEnemy();
+            AsteroidsPool.OnAllAsteroidDead += SpawnEnemy;
+        }
     }
 
 
-    private IEnumerator StartSpawn(GameObject enemy, float delay)
+    private void SpawnEnemy()
+    {
+        Instantiate(prefab, transform.position, Quaternion.identity);
+    }
+
+    private void OnDestroy()
+    {
+        if(!isPeriodicSpawn)
+            AsteroidsPool.OnAllAsteroidDead -= SpawnEnemy;
+    }
+    
+    private IEnumerator SpawnCoroutine()
     {
         while (true)
         {
-            SpawnEnemy(enemy);
-            yield return new WaitForSeconds(delay);
+            yield return new WaitForSeconds(spawnDelay);
+            SpawnEnemy();
         }
-    }
-    
-    private void SpawnEnemy(GameObject enemy)
-    {
-        Instantiate(enemy, transform.position, Quaternion.identity);
     }
 
     private void OnDrawGizmos()

@@ -7,11 +7,14 @@ public class HealthComponent : MonoBehaviour
 
     public event Action<int> OnChangeHealth;
     public event Action OnObjectDestroy;
+    public int Health => health;
+
+    public void IncreaseHealthPoint() => health ++;
     
     public void ChangeHealth(int amount)
     {
         health += amount;
-        OnChangeHealth?.Invoke(amount);
+        OnChangeHealth?.Invoke(health);
         if (health > 0) return;
         OnObjectDestroy?.Invoke();
         Destroy(gameObject);

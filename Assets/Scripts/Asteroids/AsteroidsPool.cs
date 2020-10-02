@@ -11,7 +11,7 @@ namespace Asteroids
 
         public static event Action<int> OnAsteroidDead;
 
-        private static float _increaseSpeedValue = 10f;
+        private static float _increaseSpeedValue = 20f;
 
         public static void CreateAsteroid(AsteroidBehaviour asteroid)
         {
